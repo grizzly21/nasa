@@ -6,5 +6,9 @@ import { Component } from '@angular/core';
   styleUrls: ['./app.component.scss']
 })
 export class AppComponent {
-  title = 'nasa';
+  rovers = [
+    {value: 'curiosity', viewValue: 'Curiosity'},
+    {value: 'opportunity', viewValue: 'Opportunity'},
+    {value: 'spirit', viewValue: 'Spirit'},
+  ]
 }

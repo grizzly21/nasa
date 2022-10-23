@@ -1,7 +1,10 @@
+@import "src/assets/scss/mixins";
+
 mat-toolbar{
   position: absolute;
   top: 0;
   left: 0;
+  width: 100%;
 }
 
 .container{
@@ -17,8 +20,9 @@ mat-card{
   display: flex;
   flex-direction: column;
   align-items: center;
+  padding: 20px 0 25px 0;
 
-  @include phone {
+  @include phone{
     width: 350px;
   }
 

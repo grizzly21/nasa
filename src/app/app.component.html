@@ -11,10 +11,16 @@
 
     <mat-card-content>
       <form class="choseForm">
-        <mat-form-field>
-          <mat-label>Choose your Rover</mat-label>
-          <input matInput placeholder="Rover">
+
+        <mat-form-field appearance="fill">
+          <mat-label>Choose Rover</mat-label>
+          <mat-select>
+            <mat-option *ngFor="let rover of rovers" [value]="rover.value">
+              {{rover.viewValue}}
+            </mat-option>
+          </mat-select>
         </mat-form-field>
+
         <mat-form-field>
           <mat-label>Choose Rover camera</mat-label>
           <input matInput placeholder="Camera">
