@@ -8,27 +8,62 @@ mat-toolbar{
 }
 
 .container{
+  position: relative;
+  top: 64px;
+  left: 0;
   width: 100%;
-  height: 100%;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-}
-
-mat-card{
-  width: 400px;
   display: flex;
   flex-direction: column;
   align-items: center;
-  padding: 20px 0 25px 0;
+  padding: 15px;
+  box-sizing: border-box;
+}
 
-  @include phone{
-    width: 350px;
-  }
+mat-card{
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  padding: 20px 10px 25px 10px;
+  box-sizing: border-box;
+
 
   .choseForm{
     display: flex;
-    flex-direction: column;
     gap: 15px;
+
+    @include phone {
+      flex-direction: column;
+    }
+  }
+}
+
+.wrapper{
+  margin-top: 20px;
+  padding-top: 15px;
+  width: 100%;
+  max-width: 1200px;
+  height: 100%;
+  box-sizing: border-box;
+  display: grid;
+  grid-template-columns: 1fr 1fr 1fr;
+  grid-gap: 2vw;
+  background-color: rgba(255,255,255, .8);
+  border-radius: 5px;
+
+  @include phone {
+    grid-template-columns: 1fr;
+  }
+
+  .item{
+    display: flex;
+    justify-content: center;
+    height: 300px;
+    width: 100%;
+    max-width: 420px;
+    box-sizing: border-box;
+
+    img{
+      height: 300px;
+    }
   }
 }

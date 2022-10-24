@@ -9,8 +9,11 @@ import {MatCardModule} from "@angular/material/card";
 import {MatFormFieldModule} from "@angular/material/form-field";
 import {MatInputModule} from "@angular/material/input";
 import {MatButtonModule} from "@angular/material/button";
-import {MatOptionModule} from "@angular/material/core";
+import {MatNativeDateModule, MatOptionModule, NativeDateModule} from "@angular/material/core";
 import {MatSelectModule} from "@angular/material/select";
+import {HttpClientModule} from "@angular/common/http";
+import {MatDatepickerModule} from "@angular/material/datepicker";
+import {FormsModule, ReactiveFormsModule} from "@angular/forms";
 
 @NgModule({
   declarations: [
@@ -26,7 +29,13 @@ import {MatSelectModule} from "@angular/material/select";
     MatInputModule,
     MatButtonModule,
     MatOptionModule,
-    MatSelectModule
+    MatSelectModule,
+    HttpClientModule,
+    MatDatepickerModule,
+    MatNativeDateModule,
+    NativeDateModule,
+    FormsModule,
+    ReactiveFormsModule
   ],
   providers: [],
   bootstrap: [AppComponent]
