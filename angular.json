@@ -102,6 +102,16 @@
             ],
             "scripts": []
           }
+        },
+        "deploy": {
+          "builder": "@angular/fire:deploy",
+          "options": {
+            "prerender": false,
+            "ssr": false,
+            "browserTarget": "nasa:build:production",
+            "firebaseProject": "mars-hosting-6edc0",
+            "firebaseHostingSite": "mars-hosting-6edc0"
+          }
         }
       }
     }
