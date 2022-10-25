@@ -34,15 +34,16 @@ mat-card{
     @include phone {
       flex-direction: column;
     }
+
   }
 }
 
 .wrapper{
-  margin-top: 20px;
-  padding-top: 15px;
   width: 100%;
   max-width: 1200px;
   height: 100%;
+  margin-top: 20px;
+  padding: 20px;
   box-sizing: border-box;
   display: grid;
   grid-template-columns: 1fr 1fr 1fr;
@@ -64,6 +65,12 @@ mat-card{
 
     img{
       height: 300px;
+      max-width: 300px;
+      box-sizing: border-box;
     }
   }
+}
+
+.paginator-controls{
+  margin-top: 20px;
 }

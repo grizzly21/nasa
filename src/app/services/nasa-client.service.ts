@@ -27,4 +27,19 @@ export class NasaClientService {
       }
     )
   }
+
+  getPhotosByMartianSol(value: any){
+    return this.http.get<{photos: IPhoto[]}>(
+      `${apiUrl}${value.id}/photos`,
+      {
+        params: new HttpParams({
+          fromObject: {
+            sol: value.date,
+            camera: value.camera,
+            api_key: apiKey
+          }
+        })
+      }
+    )
+  }
 }
