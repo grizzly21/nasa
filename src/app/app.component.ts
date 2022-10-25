@@ -71,7 +71,7 @@ export class AppComponent implements OnInit {
     {value: 'martian', viewValue: 'by Martian sol'},
   ]
 
-  byPlanet: string = 'earth';
+  byPlanet: string = 'martian';
   selectedValue!: string;
 
   chooseForm: FormGroup = new FormGroup({
@@ -88,6 +88,7 @@ export class AppComponent implements OnInit {
 
   showWrapper: boolean = false;
   disableButton:boolean = false;
+  noPhotos: boolean = false;
 
   constructor(
     private nasaService: NasaClientService) {
@@ -97,20 +98,22 @@ export class AppComponent implements OnInit {
   }
 
   submitForm(value: any) {
+    this.noPhotos = false;
     value.camera = CameraType[value.camera];
     if (typeof value.date === 'object'){
       value.date = formatDate(value.date, 'YYYY-MM-dd', 'en-US');
       this.nasaService.getPhotosByEarthDate(value).subscribe(
         next => {
           if (next.photos.length === 0){
-            alert("No photo in that day...");
+            this.paginationPhoto = [];
+            this.showWrapper = false;
+            this.noPhotos = true;
           }else {
             this.photos = next.photos as IPhoto[];
             this.showWrapper = true;
             this.disableButton = false;
             this.displayPhotos();
           }
-
         },
         err => {
           alert(err);
@@ -121,7 +124,9 @@ export class AppComponent implements OnInit {
       this.nasaService.getPhotosByMartianSol(value).subscribe(
         next => {
           if (next.photos.length === 0){
-            alert("No photo in that sol...");
+            this.paginationPhoto = [];
+            this.showWrapper = false;
+            this.noPhotos = true;
           }else {
             this.photos = next.photos as IPhoto[];
             this.showWrapper = true;
@@ -135,6 +140,7 @@ export class AppComponent implements OnInit {
         }
       )
     }else{
+      this.chooseForm.reset();
       alert('something went wrong...')
     }
   }

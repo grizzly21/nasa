@@ -74,6 +74,9 @@
     </mat-card-content>
   </mat-card>
 
+  <div class="wrapper block" *ngIf="noPhotos">
+    <p>Nothing was found for this query.</p>
+  </div>
   <div class="wrapper" *ngIf="showWrapper">
     <div class="item" *ngFor="let photo of paginationPhoto">
       <img [src]="photo.img_src" alt="">

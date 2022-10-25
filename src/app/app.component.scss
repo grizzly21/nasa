@@ -35,6 +35,10 @@ mat-card{
       flex-direction: column;
     }
 
+    @include tablet {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+    }
   }
 }
 
@@ -55,6 +59,10 @@ mat-card{
     grid-template-columns: 1fr;
   }
 
+  @include tablet {
+    grid-template-columns: 1fr 1fr;
+  }
+
   .item{
     display: flex;
     justify-content: center;
@@ -64,10 +72,26 @@ mat-card{
     box-sizing: border-box;
 
     img{
-      height: 300px;
+      max-height: 300px;
+      width: 100%;
       max-width: 300px;
       box-sizing: border-box;
+
+      @include phone {
+        max-height: 270px;
+      }
     }
+  }
+}
+
+.block{
+  display: block;
+
+  p{
+    text-align: center;
+    width: 100%;
+    font-size: 18px;
+    margin: 0;
   }
 }
 
